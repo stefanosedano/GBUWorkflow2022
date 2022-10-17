@@ -2,6 +2,8 @@ FROM tensorflow/tensorflow:2.0.0-gpu-py3
 #bionic
 ENV DEBIAN_FRONTEND=noninteractive
 
+COPY . /GHSLprocessing
+
 COPY ./docker_req.txt /docker_req.txt
 
 RUN apt-get install -y software-properties-common && \
@@ -26,3 +28,5 @@ RUN export C_INCLUDE_PATH=/usr/include/gdal
 
 RUN python3.7 -m pip install GDAL==3.0.0 --global-option=build_ext --global-option="-I/usr/include/gdal" --force-reinstall --upgrade --ignore-installed
 RUN python3.7 -m pip install -r docker_req.txt
+
+WORKDIR /GHSLprocessing
