@@ -1,0 +1,11 @@
+numpy
+rasterio
+shapely
+pyproj
+gdal==3.0.0
+scikit-image
+scikit-learn
+pandas
+geopandas
+scipy
+opencv-python
